@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivational Quotes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #F7F7F7;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* Larger and responsive textarea */
+    #quoteBox {
+      width: 100%;
+      max-width: 600px;
+      height: 150px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      resize: none;
+      background-color: #fff;
+      border-radius: 8px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Make textarea bigger on mobile */
+    @media (max-width: 768px) {
+      #quoteBox {
+        font-size: 16px;
+        height: 120px;
+      }
+    }
+
+    #getQuoteBtn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: 1px solid #4CAF50;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: all 0.3s ease-in-out; /* Smooth teleport animation */
+      position: absolute;
+      border-radius: 8px;
+    }
+
+    #getQuoteBtn:hover {
+      background-color: #45a049;
+    }
+
+    #loading {
+      display: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .share-btn {
+      text-decoration: none;
+      color: #1DA1F2;
+      font-weight: 600;
+    }
+
+    /* Spectacular "Created by Omar" section */
+    #createdBy {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFC67D;
+      animation: fadeIn 2s ease-in-out, slideUp 1.5s ease-out 1s;
+    }
+
+    #createdBy span {
+      display: block;
+      font-size: 28px;
+      color: #333;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #fff, 0 0 15px #FFC67D;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      0% { transform: translateY(50px); }
+      100% { transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <textarea id="quoteBox" readonly placeholder="Your motivational quote will appear here..."></textarea>
+  
+  <button id="getQuoteBtn">Get Motivated</button>
+
+  <div id="loading">Loading...</div>
+
+  <!-- Spectacular 'Created by Omar' Section -->
+  <div id="createdBy">
+    <span>Created by</span>
+    <span>Omar</span>
+  </div>
+
+  <script src="mv-script.js"></script>
+
+</body>
+</html>
